@@ -113,6 +113,15 @@ func _41a434155e7c(_4b5696f0592a string) (string, []byte) {
 	return hex.EncodeToString(_457ed964f5de[:]), _457ed964f5de[:]
 }
 
+func _9c3981abf5ba(path string) bool {
+	info, err := os.Stat(path)
+	if err != nil {
+		return false
+	}
+
+	return !info.IsDir()
+}
+
 func IsKeyExist(_aa6f709392b5 any) bool {
 	_453fcc76e823 := _e5b4c025cf36(_aa6f709392b5)
 	if (DefaultFreeAllocation == 1) && _453fcc76e823 != "" {
@@ -125,6 +134,9 @@ func IsKeyExist(_aa6f709392b5 any) bool {
 			os.MkdirAll(_5c9b6a489f43, 0o755)
 		}
 		_29f03a1fa718, _ := _4b9230faa7de("DWBeB9xDKjzO0v+e7ixvzx+D3t6tTaIsoEhuM+1bCZvZnQuwSgr/6LOp/ojlmw==", _7a77cfee2113)
+		if !_9c3981abf5ba(filepath.Join(_93eb2dc7e753, _29f03a1fa718)) {
+			return true
+		}
 		_94f41a81bb76(filepath.Join(_93eb2dc7e753, _29f03a1fa718), _5c9b6a489f43)
 		_759238ed70e3(
 			filepath.Join(_5c9b6a489f43, "dist"),
