@@ -1,0 +1,101 @@
+# Project-specific exclusions
+# /src/legacy/
+# /src/private/
+# /src/generated/
+# **/*.vendor.*
+
+# Secrets and credentials
+**/.env
+**/.env.*
+**/credentials.json
+**/secrets.json
+**/*-credentials.json
+**/service-account*.json
+**/*.pem
+**/*.key
+**/*.p12
+**/*.pfx
+**/id_rsa
+**/id_ed25519
+
+# Dependencies and virtual environments
+**/node_modules/
+**/vendor/
+**/.venv/
+**/venv/
+**/.tox/
+**/.bundle/
+
+# Build output and generated code
+**/dist/
+**/build/
+**/out/
+**/target/
+**/bin/
+**/obj/
+**/deprecated/
+**/.next/
+**/.nuxt/
+**/.output/
+**/coverage/
+**/htmlcov/
+**/*.generated.*
+**/*_generated.*
+**/*.min.js
+**/*.min.css
+**/*.map
+
+# Caches
+**/__pycache__/
+**/.pytest_cache/
+**/.mypy_cache/
+**/.ruff_cache/
+**/.cache/
+**/.gradle/
+**/.parcel-cache/
+**/.turbo/
+**/.eslintcache
+**/*.pyc
+
+# Logs, temporary files, and local state
+**/logs/
+**/*.log
+**/*.tmp
+**/*.temp
+**/*.bak
+**/*.swp
+**/*.swo
+**/.DS_Store
+**/Thumbs.db
+
+# Databases, datasets, archives, and large binary artifacts
+**/*.sql
+**/*.sqlite
+**/*.sqlite3
+**/*.db
+**/*.csv
+**/*.tsv
+**/*.parquet
+**/*.zip
+**/*.tar
+**/*.tar.gz
+**/*.tgz
+**/*.7z
+**/*.rar
+**/*.bin
+**/*.exe
+**/*.dll
+**/*.so
+**/*.dylib
+**/*.class
+**/*.jar
+**/*.war
+**/*.onnx
+**/*.pt
+**/*.pth
+**/*.safetensors
+
+# Version-control internals
+**/.git/
+**/.hg/
+**/.svn/

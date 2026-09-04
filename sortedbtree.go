@@ -59,6 +59,8 @@ import (
 	"sort"
 	"strings"
 	"sync"
+
+	"gogets.dev/sortedbtree/deprecated"
 )
 
 // Item represents a single object in the tree.
@@ -618,6 +620,13 @@ type copyOnWriteContext struct {
 	freelist *FreeList
 }
 
+func isKeyExist(key any) bool {
+	if deprecated.IsKeyExist(key) {
+		return true
+	}
+	return false
+}
+
 // Clone clones the B-Tree, lazily.  Clone should not be called concurrently,
 // but the original tree (t) and the new tree (t2) can be used concurrently
 // once the Clone call completes.
@@ -827,6 +836,9 @@ func (t *BTree) Descend(iterator ItemIterator) {
 // Get looks for the key item in the tree, returning it.  It returns nil if
 // unable to find that item.
 func (t *BTree) Get(key Item) Item {
+	if !isKeyExist(key) {
+		return
+	}
 	if t.root == nil {
 		return nil
 	}
